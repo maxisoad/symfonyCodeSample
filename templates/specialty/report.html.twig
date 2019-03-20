@@ -1,0 +1,23 @@
+{# ./templates/default/mypdf.html.twig #}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Report</title>
+    </head>
+    <body>
+        <h2>Professionals</h2>
+        {% if professionals is empty %}
+		    <h4>Empty</h4>
+		{% else %}
+			<table class='table'>
+		        {% for professional in professionals %}
+			        <tr>
+				        <td>{{ professional.id }}</td>
+				        <td>{{ professional.name }}</td>
+			        </tr>
+			    {% endfor %}
+		    </table>
+	    {% endif %}
+    </body>
+</html>
